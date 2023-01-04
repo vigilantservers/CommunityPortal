@@ -1,0 +1,35 @@
+widget {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .widget-header {
+    background: linear-gradient(to right, #f7b733, #fc4a1a);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .widget-header h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .widget-header p {
+    color: white;
+    font-size: 16px;
+    margin: 8px 0 0 0;
+  }
+  
+  .widget-content {
+    padding: 16px;
+  }
+  

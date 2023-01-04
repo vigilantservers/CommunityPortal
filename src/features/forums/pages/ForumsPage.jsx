@@ -1,5 +1,6 @@
 import React from 'react';
 import {Category, Widget} from '../components/';
+import './ForumsPage.css';
 
 const ForumsPage = () => {
   return (
