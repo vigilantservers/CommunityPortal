@@ -1,0 +1,53 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    width: 98%;
+  }
+  
+  .hero-image img {
+    width: 100%;
+  }
+  
+  .hero-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(146,108,255,1), rgba(146,108,255,0.5));
+    opacity: 0.8;
+    padding: 2rem;
+  }
+
+  .hero-image .text {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .hero-image .text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .hero-image .text h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }

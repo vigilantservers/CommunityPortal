@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Footer, Header} from "./components";
+import { HomePage, UsersPage, Err404Page } from "./pages";
+import { Routes ,Route, BrowserRouter } from 'react-router-dom';
+import { LoginPage,LogoutPage, RegisterPage } from "./features/users/pages/";
+import { ForumsPage } from "./features/forums/pages/";
+import { ForumContext } from './context/';
 
-function App() {
+import "./App.css";
+
+const App = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
+
+  const value = {
+    authenticated,
+    user,
+    setAuthenticated,
+    setUser,
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <ForumContext.Provider value={{value}}>
+        <Header user={user} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/forums" element={<ForumsPage />} />
+          <Route path="/users" element={<UsersPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/logout" element={<LogoutPage />} />
+          <Route path="*" element={<Err404Page />} />
+        </Routes>
+        <Footer/>
+      </ForumContext.Provider>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

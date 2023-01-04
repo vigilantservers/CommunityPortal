@@ -1,0 +1,21 @@
+/* 404 error styles */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px - 50px);
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 1.8em;
+    color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #383A65;
+  }
+  
+  .error img{
+    width: 400px;
+    max-width: 500px;
+  }
