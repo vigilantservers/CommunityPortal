@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Footer, Header} from "./components";
+import { Footer, Header } from "./components";
 import { HomePage, UsersPage, Err404Page } from "./pages";
-import { Routes ,Route, BrowserRouter } from 'react-router-dom';
-import { LoginPage,LogoutPage, RegisterPage } from "./features/users/pages/";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { LoginPage, LogoutPage, RegisterPage } from "./features/users/pages/";
 import { ForumsPage } from "./features/forums/pages/";
-import { ForumContext } from './context/';
+import { ForumContext } from "./context/";
 
 import "./App.css";
 
@@ -21,19 +21,19 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-      <ForumContext.Provider value={{value}}>
-        <Header user={user} />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/forums" element={<ForumsPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/logout" element={<LogoutPage />} />
-          <Route path="*" element={<Err404Page />} />
-        </Routes>
-        <Footer/>
-      </ForumContext.Provider>
+        <ForumContext.Provider value={{ value }}>
+          <Header user={user} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/forums" element={<ForumsPage />} />
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/logout" element={<LogoutPage />} />
+            <Route path="*" element={<Err404Page />} />
+          </Routes>
+          <Footer />
+        </ForumContext.Provider>
       </BrowserRouter>
     </div>
   );

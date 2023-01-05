@@ -1,10 +1,5 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-const ForumContext = createContext({
-  authenticated: false,
-  user: {},
-  setAuthenticated: () => {},
-  setUser: () => {},
-});
+const ForumContext = createContext({});
 
 export default ForumContext;
