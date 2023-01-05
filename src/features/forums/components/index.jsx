@@ -1,2 +1,3 @@
 export {default as Category} from "./Category";
-export {default as Widget} from "./Widget";
+export {default as RecentPost} from "./RecentPost";
+

@@ -1,15 +1,14 @@
 import React from 'react';
 import './Widget.css';
 
-const Widget = () => {
+const Widget = ({ title, children }) => {
   return (
     <div className="widget">
       <div className="widget-header">
-        <h1>Widget Title</h1>
-        <p>Widget Subtitle</p>
+        <h1>{title}</h1>
       </div>
       <div className="widget-content">
-        // widget content goes here
+        {children}
       </div>
     </div>
   );
