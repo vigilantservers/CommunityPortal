@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const LogoutPage = () => {
-  return <div>LogoutPage</div>;
+  const navigate = useNavigate();
+  useEffect (() => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('user');
+    navigate('/');
+  }, [navigate]);
 };
 
 export default LogoutPage;
