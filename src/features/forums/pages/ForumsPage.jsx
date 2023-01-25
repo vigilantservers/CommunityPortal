@@ -19,7 +19,7 @@ const ForumsPage = () => {
   useEffect(() => {
     if (topics.length > 0) {
       const uniqueCategories = [
-        ...new Set(topics.map((topic) => topic.categoryName)),
+        ...new Set(topics.map((topic) => topic.category.name)),
       ];
       setCategories(uniqueCategories);
     }
@@ -32,7 +32,7 @@ const ForumsPage = () => {
           <Category
             key={category}
             categoryName={category}
-            topics={topics.filter((topic) => topic.categoryName === category)}
+            topics={topics.filter((topic) => topic.category.name === category)}
           />
         ))}
       </div>

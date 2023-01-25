@@ -3,7 +3,7 @@ import { Footer, Header } from "./components";
 import { HomePage, UsersPage, Err404Page } from "./pages";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { LoginPage, LogoutPage, RegisterPage } from "./features/users/pages/";
-import { ForumsPage } from "./features/forums/pages/";
+import { ForumsPage, TopicPage } from "./features/forums/pages/";
 import { ForumContext } from "./context/";
 
 import "./App.css";
@@ -31,6 +31,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/logout" element={<LogoutPage />} />
             <Route path="*" element={<Err404Page />} />
+            <Route path="/forum/topics/:id" component={TopicPage}/>
           </Routes>
           <Footer />
         </ForumContext.Provider>
