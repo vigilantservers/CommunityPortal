@@ -1,11 +1,13 @@
 import Topic from '../components/Topic';
+import { useParams } from 'react-router'
 
-const TopicPage = ({match}) => {
+const TopicPage = () => {
+    const { id } = useParams()
     return (
-        <div>
-            <Topic match={match} />
-        </div>
-    )
-}
+      <div>
+        <Topic id={id} />
+      </div>
+    );
+  };
 
 export default (TopicPage);
