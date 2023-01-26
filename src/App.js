@@ -31,7 +31,7 @@ const App = () => {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/logout" element={<LogoutPage />} />
             <Route path="*" element={<Err404Page />} />
-            <Route path="/forums/topics/:id" element={<TopicPage/>}/>
+            <Route path="/forums/topic/:id" element={<TopicPage />} />
           </Routes>
           <Footer />
         </ForumContext.Provider>
