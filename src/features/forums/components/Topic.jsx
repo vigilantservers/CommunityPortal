@@ -1,20 +1,23 @@
 import React from "react";
 import "./Topic.css";
+import Reply from "./Reply";
 
 const Topic = ({ topic }) => {
   return (
     <div className="topic">
       <div className="topic-container">
-        <div className="topic-header">
-          <h1>Title: {topic.data.title}</h1>
-          <button class="topic-settings-btn">&#9776;</button>
-          <div class="kebab-menu">
+      <div className="topic-header">
+        <h1 class="topic-title">Title: {topic.data.title}</h1>
+        <div class="topic-settings-dropdown">
+          <button class="topic-menu">...</button>
+          <div class="topic-settings-dropdown-content">
             <a href="#">Option 1</a>
             <a href="#">Option 2</a>
             <a href="#">Option 3</a>
           </div>
         </div>
-        <div className="topic-grid">
+      </div>
+      <div className="topic-grid">
           <div className="topic-left">
             <div className="topic-userinfo">
               <img
@@ -48,6 +51,11 @@ const Topic = ({ topic }) => {
             )}
           </div>
         </div>
+      </div>
+      <div className="topic-replies">
+        {topic.replies.map((reply) => (
+          <Reply key={reply.id} reply={reply} />
+        ))}
       </div>
     </div>
   );
