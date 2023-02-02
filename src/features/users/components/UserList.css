@@ -1,0 +1,83 @@
+.user-list h2 {
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.user-profiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+}
+.user-profile-square {
+  height: 300px;
+  width: 300px;
+  background-color: #383a65;
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user-profile-square .profile-picture {
+  width: 200px;
+  height: 200px;
+  padding-top: 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile-square .profile-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.profile-info .username {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.profile-info .role {
+  font-size: 16px;
+  font-style: italic;
+  padding: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.pagination button {
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.pagination .active button {
+  background-color: #926cff;
+  color: white;
+  outline: none;
+}

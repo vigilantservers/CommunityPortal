@@ -6,18 +6,18 @@ const Topic = ({ topic }) => {
   return (
     <div className="topic">
       <div className="topic-container">
-      <div className="topic-header">
-        <h1 class="topic-title">Title: {topic.data.title}</h1>
-        <div class="topic-settings-dropdown">
-          <button class="topic-menu">...</button>
-          <div class="topic-settings-dropdown-content">
-            <a href="#">Option 1</a>
-            <a href="#">Option 2</a>
-            <a href="#">Option 3</a>
+        <div className="topic-header">
+          <h1 className="topic-title">Title: {topic.data.title}</h1>
+          <div className="topic-settings-dropdown">
+            <button className="topic-menu">...</button>
+            <div className="topic-settings-dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="topic-grid">
+        <div className="topic-grid">
           <div className="topic-left">
             <div className="topic-userinfo">
               <img
@@ -49,13 +49,15 @@ const Topic = ({ topic }) => {
                 {new Date(topic.data.dateEdited).toLocaleDateString()}
               </p>
             )}
+            <button className="topic-reply-button">Reply</button>
           </div>
         </div>
       </div>
       <div className="topic-replies">
-        {topic.replies.map((reply) => (
-          <Reply key={reply.id} reply={reply} />
-        ))}
+        {topic.data.replies &&
+          topic.data.replies.map((reply, index) => (
+            <Reply key={index} reply={reply} />
+          ))}
       </div>
     </div>
   );

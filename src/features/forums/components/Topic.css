@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 150vh;
 }
 
 .topic-container {
@@ -76,7 +77,6 @@
 .topic-settings-dropdown a:hover {
   background-color: #970cf3;
 }
-
 
 .topic-grid {
   display: grid;

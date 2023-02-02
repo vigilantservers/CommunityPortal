@@ -56,11 +56,23 @@ const TopicPage = () => {
           `https://localhost:7174/api/Topics/getbyid/${id}`
         );
         const topic = response.data;
-        topic.content = validateAndSanitize(topic.content);
-        setTopic(topic);
-        console.log(topic);
+        console.log("Topic: ", topic);
+        topic.data.content = validateAndSanitize(topic.data.content);
+        console.log("Topic content: ", topic.data.content);
+        try {
+          const response = await axios.get(
+            `https://localhost:7174/api/Replies/topic/${id}`
+          );
+          const replies = response.data.data;
+          // add the replies to the topic object
+          topic.data.replies = replies;
+          console.log("Replies: ", topic.data.replies);
+          setTopic(topic);
+        } catch (err) {
+          console.log("Error fetching replies: ", err);
+        }
       } catch (err) {
-        console.log(err);
+        console.log("Error fetching topic: ", err);
       }
     }
     fetchTopic();
